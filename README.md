@@ -1,3 +1,7 @@
+## LCHS Iron Eagles Specific:
+
+Use this repository to make test code for robots. You can make motor debugging, side projects, and more within this repository. This simply gives you a dedicated space to experiment, should you decide to use it. Please use this repository to train new people as well, as it gives them an isolated space to mess around with and not impact any other code files should something go wrong. 
+
 ## NOTICE
 
 This repository contains the public FTC SDK for the CENTERSTAGE (2023-2024) competition season.
