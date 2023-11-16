@@ -26,12 +26,44 @@ public class MotorTestForDummies extends LinearOpMode {
         waitForStart();
         runtime.reset();
 
-
+        double y = 0;
         while (opModeIsActive()) {
 
-            double thing = gamepad1.left_stick_y;
+            boolean x = gamepad1.a;
 
-            beta.setPower(thing);
+            double thing = 0;
+            double thingy= 0;
+
+            if (x) {
+                if (y == 0) {
+                    y = 2;
+                }
+                if (y == 1) {
+                    y = 3;
+                }
+            } else {
+                if (y == 2) {
+                    y = 1;
+                }
+                if (y == 3) {
+                    y = 0;
+                }
+            }
+
+            if (y == 1) {
+                thing = gamepad1.left_stick_x;
+                thingy= gamepad1.left_stick_y;
+            } else {
+                thing = gamepad1.right_stick_x;
+                thingy= gamepad1.right_stick_y;
+            }
+
+            thing = Math.abs(thing);
+            thingy = Math.abs(thingy);
+
+
+
+            beta.setPower(thing + thingy);
 
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.update();
